@@ -1,15 +1,19 @@
 
 import { useState } from 'react';
 import './App.css';
-import Profile from './Profile';
-
+import User from './User';
 function App() {
+
+  function getData(){
+    alert("Hello form App");
+  }
+
   return (
     <div className="App">
       <div>
-        <h1 style={{backgroundColor:"skyblue" , padding:"2rem"}}>Conditional Rendring</h1>
+        <h1 style={{backgroundColor:"skyblue" , padding:"2rem"}}>Pass function as Props</h1>
       </div>
-      <Profile />
+      <User data={getData} />
       
     </div>
     
