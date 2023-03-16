@@ -2,26 +2,21 @@
 import './App.css';
 import React, { useState } from 'react';
 
+
 function App() {
-
-  const[data,setData] = useState(null);
-  const[print,setPrint] = useState(false);
-
-  function getData(val){
-    console.log(val.target.value);
-    setData(val.target.value);
-    setPrint(false);
-  }
-
+  const[status,setStatus] = useState(true);
   return (
-    <div className="App">      
+    <div className="App">
+      <div>
+        <h1 style={{backgroundColor:"skyblue", color:"#fff"}}>Hide and Show Element</h1>
+      </div>
       {
-        print?
-        <h1>{data}</h1>
-        :null
+        status?
+        <h2>Hello World!</h2>:
+        null
       }
-      <input type="text" onChange={getData}/>
-      <button onClick={() => setPrint(true)}>Print Data</button>
+      <button onClick={() => setStatus(false)}>Hide</button>
+      <button onClick={() => setStatus(true)}>Show</button>
     </div>
     
   );
