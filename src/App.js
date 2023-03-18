@@ -1,23 +1,29 @@
 
-import { useState } from 'react';
+import React,{ useState } from 'react';
 import './App.css';
-import User from './User';
-function App() {
+class App extends React.Component {
 
-  function getData(){
-    alert("Hello form App");
+  constructor() {
+    super();
+    this.state={
+      data:"Sonu Singh"
+    }
   }
 
-  return (
-    <div className="App">
-      <div>
-        <h1 style={{backgroundColor:"skyblue" , padding:"2rem"}}>Pass function as Props</h1>
+  render() {    
+    console.warn("Render");
+    return (
+                                                                                                                               
+      <div className="App">
+        <div>
+          <h1 style={{backgroundColor:"skyblue" , padding:"2rem"}}>Constructor Life Cycle Method</h1>
+        </div>
+        <h2>{this.state.data}</h2>
       </div>
-      <User data={getData} />
       
-    </div>
-    
-  );
+    )
+  }
+  
 }
 
 export default App;
