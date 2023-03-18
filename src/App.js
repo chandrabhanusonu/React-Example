@@ -1,29 +1,20 @@
 
-import React,{ useState } from 'react';
 import './App.css';
-class App extends React.Component {
-
-  constructor() {
-    super();
-    this.state={
-      data:"Sonu Singh"
-    }
-  }
-
-  render() {    
-    console.warn("Render");
+import User from './User';
+import React, { useState } from 'react';
+function App() {
+    const [name,setName] = useState("Sonu Singh");
     return (
                                                                                                                                
       <div className="App">
         <div>
-          <h1 style={{backgroundColor:"skyblue" , padding:"2rem"}}>Constructor Life Cycle Method</h1>
+          <h1>Render,Life Cycle Method</h1>
         </div>
-        <h2>{this.state.data}</h2>
+        <User name={name} />
+        <button onClick={() => setName("Ram Singh")}>Update Name</button>
       </div>
       
     )
   }
   
-}
-
 export default App;
